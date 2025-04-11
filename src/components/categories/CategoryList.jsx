@@ -16,7 +16,7 @@ useEffect(()=>{
   const fetchCategory = async () => {
     try {
       const response = await getCategories();
-      setCategory(response.data.data);
+      setCategory(response.data);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -30,12 +30,6 @@ useEffect(()=>{
 
 if(loading)return <Loader/>;
 if (error) return <ErrorMessage/>;
-
-
-
-
-
-
 
   return (
     <div className="categories-grid">

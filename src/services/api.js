@@ -11,9 +11,9 @@ export const getCourse = (id) => api.get(`/courses/${id}`);
 export const updateCourse = (id, data) => api.put(`/courses/${id}`, data);
 export const deleteCourse = (id) => api.delete(`/courses/${id}`);
 
-// export const getCategories = () => api.get('/categories');
-// export const getTags = () => api.get('/tags');
-export const getVideos = () => api.get('/videos');
+export const getCourseStats = () => api.get('/stats/courses');
+export const getCategoryStats = () => api.get('/stats/categories');
+export const getTagStats = () => api.get('/stats/tags');
 
 export const createCourse = async (courseData) => {
   const response = await api.post('/courses', courseData, {
@@ -29,7 +29,7 @@ export const createCourse = async (courseData) => {
 export const getCategories = async () => {
   try {
     const response = await api.get('/categories');
-    return response.data; // Retourne directement les données
+    return response.data; 
   } catch (error) {
     console.error("Erreur dans getCategories:", error);
     throw error;

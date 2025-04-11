@@ -18,11 +18,11 @@ const Formulaire = () => {
   });
 
   const [categories, setCategories] = useState([]);
-  // const [allTags, setAllTags] = useState([]);
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
 
-  // Charger les catégories et tags au montage du composant
+  
   React.useEffect(() => {
     const fetchData = async () => {
       try {
@@ -64,7 +64,7 @@ const Formulaire = () => {
 
     try {
       await createCourse(formData);
-      navigate("/courses"); // Rediriger vers la liste des cours après création
+      navigate("/courses"); 
     } catch (err) {
       console.error("Erreur complète:", err);
       console.error("Réponse serveur:", err.response);
