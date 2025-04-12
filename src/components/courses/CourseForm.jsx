@@ -105,7 +105,7 @@ const Formulaire = () => {
         </div>
 
         <div className="form-group">
-          <label>Contenu (HTML/Markdown):</label>
+          <label>Contenu</label>
           <textarea
             name="content"
             value={formData.content}
@@ -176,23 +176,6 @@ const Formulaire = () => {
             ))}
           </select>
         </div>
-
-        {/* <div className="form-group">
-          <label>Tags:</label>
-          <div className="tags-container">
-            {allTags.map(tag => (
-              <div key={tag.id} className="tag-option">
-                <input
-                  type="checkbox"
-                  id={`tag-${tag.id}`}
-                  checked={formData.tags.includes(tag.id)}
-                  onChange={() => handleTagChange(tag.id)}
-                />
-                <label htmlFor={`tag-${tag.id}`}>{tag.name}</label>
-              </div>
-            ))}
-          </div>
-        </div> */}
 
         <div className="form-group">
           <label>Statut:</label>

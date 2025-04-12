@@ -16,7 +16,6 @@ const CourseList = () => {
       try {
         const response = await getCourses();
         setCourses(response.data.data);
-
       } catch (err) {
         setError(err.message);
       } finally {
@@ -26,6 +25,10 @@ const CourseList = () => {
 
     fetchCourses();
   }, []);
+  
+  const handleCourseDeleted = (deletedCourseId) => {
+    setCourses(courses.filter(course => course.id !== deletedCourseId));
+  };
 
   if (loading) return <Loader />;
   if (error) return <ErrorMessage message={error} />;
@@ -35,24 +38,20 @@ const CourseList = () => {
       <div className="course-header">
         <h2>Liste des Cours</h2>
         <button
-              onClick={() => navigate("/formulaire")}
-              className="go-to-form-button"
-            >
-              Ajouter Un Course 
-            </button>
-      
+          onClick={() => navigate("/formulaire")}
+          className="go-to-form-button"
+        >
+          Ajouter Un Cours
+        </button>
       </div>
-    <div className="course-list">
-        <CourseCard course={courses} />
+      <div className="course-list">
+        <CourseCard 
+          course={courses} 
+          onCourseDeleted={handleCourseDeleted} 
+        />
+      </div>
     </div>
-    </div>
-
-
   );
 };
-
-
-
-
 
 export default CourseList;

@@ -10,10 +10,14 @@ export const getCourse = (id) => api.get(`/courses/${id}`);
 // export const createCourse = (data) => api.post('/courses', data);
 export const updateCourse = (id, data) => api.put(`/courses/${id}`, data);
 export const deleteCourse = (id) => api.delete(`/courses/${id}`);
+// export const getCourseById = (id) => axios.get(`/api/courses/${id}`);
+export const getCourseById = (id) => api.get(`/courses/${id}`);
+
 
 export const getCourseStats = () => api.get('/stats/courses');
 export const getCategoryStats = () => api.get('/stats/categories');
 export const getTagStats = () => api.get('/stats/tags');
+
 
 export const createCourse = async (courseData) => {
   const response = await api.post('/courses', courseData, {

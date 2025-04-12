@@ -370,7 +370,7 @@ button[type="submit"]:disabled {
 
 .go-to-form-button {
   padding: 12px 24px;
-  background-color: #4f46e5; /* Indigo-600 */
+  background-color: #4f46e5; 
   color: white;
   border: none;
   border-radius: 8px;
@@ -392,33 +392,170 @@ button[type="submit"]:disabled {
 }
 
 
-.stats-page .stats-container {
-  max-width: 1200px;
+.edit-form-container {
+  max-width: 800px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-.stats-page .stats-title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #2d3748;
+.edit-form-container h2 {
+  color: var(--primary);
   margin-bottom: 1.5rem;
-  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(67, 97, 238, 0.1);
 }
 
-.stats-page .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+
+.edit-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.edit-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.edit-form-group input,
+.edit-form-group textarea,
+.edit-form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.edit-form-group input:focus,
+.edit-form-group textarea:focus,
+.edit-form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.edit-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
   margin-top: 2rem;
+  gap: 1rem;
 }
 
 
-.stats-page .stat-card {
-  background: white !important;
-  border-radius: 12px !important;
-  padding: 1.5rem !important;
+.update-button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-grow: 1;
 }
+
+.update-button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2);
+}
+
+.update-button:disabled {
+  background-color: var(--gray);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+.delete-button {
+  background-color: var(--danger);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+}
+
+.delete-button:hover {
+  background-color: #d3165e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(247, 37, 133, 0.2);
+}
+
+
+.edit-error-message {
+  color: var(--danger);
+  background-color: rgba(247, 37, 133, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--danger);
+}
+
+
+.course-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.edit-btn {
+  background-color: green;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-grow: 1;
+  text-align: center;
+  text-decoration: none;
+}
+
+.edit-btn:hover {
+  background-color:rgb(17, 212, 17);
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-grow: 1;
+}
+
+.delete-btn:hover {
+  background-color: #ec121d;
+  transform: translateY(-1px);
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -440,5 +577,16 @@ button[type="submit"]:disabled {
   
   .course-list, .categories-grid {
     grid-template-columns: 1fr;
+  }
+  .edit-form-container {
+    padding: 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .course-actions {
+    flex-direction: column;
   }
 }

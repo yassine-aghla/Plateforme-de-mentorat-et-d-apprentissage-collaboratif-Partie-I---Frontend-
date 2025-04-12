@@ -10,7 +10,7 @@ import Categories from './pages/Categories';
 import CourseForm from './components/courses/CourseForm';
 import Tags from './pages/Tags';
 import Stats from './pages/Stats';
-
+import EditCourseForm from './components/courses/EditCourseForm';
 
 
 
@@ -28,9 +28,8 @@ const App = () => {
             <Route path="/categories" element={<Categories />} />
             <Route path="/formulaire" element={<CourseForm />} />
             <Route path="/tags" element={<Tags />} />
-
-<Route  path="/stats" element={<Stats />}
-/>
+            <Route  path="/stats" element={<Stats />}/>
+            <Route path="/edit-course/:id" element={<EditCourseForm />} />
            
 
           
